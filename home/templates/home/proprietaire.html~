@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+	<h1>Espace Proprietaire</h1>
+	<h3> Bonjour, {( user.name }}</h3>
+</body>
+
+</html>

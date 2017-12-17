@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+	<meta>
+
+	</meta>
+<body>
+	{% if user.is_authenticated %}
+	<p>Tu es deja connecte, {{user.username}}.</p>
+	<h2><a href= "{% url 'logout' %}">Logout</a></h2>
+	{% else %}
+	<div style="display: flex; justify-content: space-around; align-items: center;" >
+	<div style="display: flex; justify-content:center;  flex-direction: column;">
+	<h1>Proprietaire</h1>
+	<form method="post" action="{% url 'signinProprietaire' %}">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Inscription"/>
+	</form>
+	</div>
+
+	<div>
+	<h1>Cultivateur</h1>
+	<form method="post" action="{% url 'signinCultivateur' %}">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Inscription">
+	</form>
+	</div>
+	</div>
+	{% endif %}
+</body>
+
+</html>
